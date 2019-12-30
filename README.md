@@ -1,4 +1,4 @@
-# [Adfree Public DoH](https://usableprivacy.net)
+# [Public adfree DNS over HTTPS (DoH) resolver](https://usableprivacy.net)
 
 We run a public strictly non-logging DNS over HTTPS (DoH) server with 
 advertising and tracker filtering. This repo provides both instructions for 
@@ -11,7 +11,7 @@ mobile clients and the general setup files.
 [05_exclude]: doc/05_exclude_apps.png
 
 ## Android Setup with Jigsaw Intra App
-### 1. Install [Intra App](https://play.google.com/store/apps/details?id=app.intra>)
+### 1. Install [Intra App](https://play.google.com/store/apps/details?id=app.intra)
 ### 2. Set DoH Server to https://adfree.usableprivacy.net/
 ![intra config][01_config]
 ![intra_working][02_works]
