@@ -11,12 +11,13 @@ mobile clients and the general setup files.
 [05_exclude]: doc/05_exclude_apps.png
 
 ## Android Setup with Jigsaw Intra App
-### 1. Install [Intra App)](https://play.google.com/store/apps/details?id=app.intra>)
+### 1. Install [Intra App](https://play.google.com/store/apps/details?id=app.intra>)
 ### 2. Set DoH Server to https://adfree.usableprivacy.net/
 ![intra config][01_config]
 ![intra_working][02_works]
 ### Analyse Queries
 Advertising and tracking services receive `NX` responses.
+
 ![intra show queries][03_queries]
 ![intra blocked queries][04_blocked]
 ### General recommendations
@@ -24,14 +25,16 @@ Our adfree DoH server works best with mobile apps. DNS-based blocking is
 very course grained. We therefore recommend you use decent browsers with 
 blocking extensions and use our Apps primarily to **counter mobile app tracking**.
 You can exclude e.g. your mobile browser from Intra.
+
 ![intra exclude apps][05_exclude]
 
 ## Host your own usable privacy DNS (updns) setup
 * [docker-compose.yml](docker-compose.yml) spawns your own custom blocking DoH server.
-* The docker setup is prepared deployement with `traefik` (edge routing + TLS)
-* Basic Services
- * [doh](doh) deploys `dnsdist` in Docker to provide DoH over `HTTP`
- * [nameserver](nameserver) deploys `dnsmasq` in Docker for filtering, ruleset see [blacklist.conf](nameserver/blacklist.conf)
- * `staticweb` is our current [website](https://usableprivacy.net)
+   * The Docker compose setup is prepared for deployment with `traefik` (edge routing + TLS)
+* Basic **updns** Services
+   * [doh](doh) deploys `dnsdist` in Docker to provide DoH over `HTTP`
+   * [nameserver](nameserver) deploys `dnsmasq` in Docker for filtering, ruleset see [blacklist.conf](nameserver/blacklist.conf)
+ * Other Services
+    * [staticweb](website) is our current [website](https://usableprivacy.net)
 ---
 [Markus Donko-Huber (2019)](https://nysos.net)
