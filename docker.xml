@@ -1,0 +1,6 @@
+<application>
+  <component name="DockerSettings">
+    <option name="dockerComposePath" value="/snap/bin/docker-compose" />
+    <option name="dockerMachinePath" value="/snap/bin/docker-machine" />
+  </component>
+</application>
