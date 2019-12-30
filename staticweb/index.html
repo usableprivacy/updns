@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="UTF-8">
+    <meta name="publisher" content="NysosTech e.U.">
+    <meta name="copyright" content="NysosTech e.U.">
+    <title>usableprivacy.net</title>
+    <style>
+        .usableprivacy-image-container {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            margin-right: -50%;
+            text-align: center;
+            transform: translate(-50%, -50%)
+        }
+        h3 {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+<div class="usableprivacy-image-container">
+    <img src="usableprivacynet-web.png" alt="usableprivacy.net" srcset="usableprivacynet-web.svg">
+    <h4 onclick="copyToClipboard()">https://adfree.usableprivacy.net/ <button>📋Copy DoH Server</button></h4>
+</div>
+
+<script>
+    function copyToClipboard() {
+        // Create new element
+        var el = document.createElement('textarea');
+        // Set value (string to be copied)
+        el.value = "https://adfree.usableprivacy.net/";
+        // Set non-editable to avoid focus and move outside of view
+        el.setAttribute('readonly', '');
+        el.style = {position: 'absolute', left: '-9999px'};
+        document.body.appendChild(el);
+        // Select text inside element
+        el.select();
+        // Copy text to clipboard
+        document.execCommand('copy');
+        // Remove temporary element
+        document.body.removeChild(el);
+    }
+</script>
+</body>
+
+</html>
