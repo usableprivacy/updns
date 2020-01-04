@@ -22,7 +22,7 @@ Advertising and tracking services receive `NX` responses.
 ![intra blocked queries][04_blocked]
 ### General recommendations
 Our adfree DoH server works best with mobile apps. DNS-based blocking is
-very course grained. We therefore recommend you use decent browsers with 
+very coarse-grained. We therefore recommend you use decent browsers with 
 blocking extensions and use our Apps primarily to **counter mobile app tracking**.
 You can exclude e.g. your mobile browser from Intra.
 
