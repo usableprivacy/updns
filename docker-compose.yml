@@ -1,0 +1,12 @@
+version: '3'
+services:
+  doh:
+    build: doh
+    depends_on:
+      - nameserver
+    environment:
+      - DNSCONTAINER=updns_nameserver_1
+    restart: "always"
+  nameserver:
+    build: nameserver
+    restart: "always"
