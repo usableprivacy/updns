@@ -4,9 +4,14 @@ services:
     build: doh
     depends_on:
       - nameserver
+    restart: "always"
     environment:
       - DNSCONTAINER=updns_nameserver_1
-    restart: "always"
+    labels:
+      - "traefik.frontend.entryPoints=https"
+      - "traefik.domain=usableprivacy.net"
+      - "traefik.frontend.rule=Host:adfree.usableprivacy.net"
+      - "traefik.application.port=8053"
   nameserver:
     build: nameserver
     restart: "always"
