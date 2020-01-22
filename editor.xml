@@ -1,0 +1,5 @@
+<application>
+  <component name="TodoConfiguration">
+    <pattern pattern="\b(todo|fixme)\b.*" />
+  </component>
+</application>
