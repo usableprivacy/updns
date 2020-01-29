@@ -1,5 +1,4 @@
 #!/bin/sh
 
-echo "using DNS server: $DNSCONTAINER"
-dns_ip=$(getent hosts $DNSCONTAINER | awk '{ print $1 }')
-dnsdist $dns_ip:5300 --supervised
+dns_ips=$(getent hosts nameserver | awk 'BEGIN{ORS=":5300 ";}{print $1}')
+dnsdist --supervised $dns_ips

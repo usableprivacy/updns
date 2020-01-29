@@ -5,8 +5,6 @@ services:
     depends_on:
       - nameserver
     restart: "always"
-    environment:
-      - DNSCONTAINER=updns_nameserver_1
     labels:
       - "traefik.frontend.entryPoints=https"
       - "traefik.domain=usableprivacy.net"
