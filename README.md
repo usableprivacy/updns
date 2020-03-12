@@ -32,8 +32,8 @@ You can exclude e.g. your mobile browser from Intra.
 * [docker-compose.yml](docker-compose.yml) spawns your own custom blocking DoH server.
    * The Docker compose setup is prepared for deployment with `traefik` (edge routing + TLS)
 * Basic **updns** Services
-   * [doh](doh) deploys `dnsdist` in Docker to provide DoH over `HTTP`
-   * [nameserver](nameserver) deploys `dnsmasq` in Docker for filtering, ruleset see [blacklist.conf](nameserver/blacklist.conf)
+   * [doh](cryptodns) deploys `dnsdist` in Docker to provide DoH over `HTTP`
+   * [nameserver](nameserver) deploys `dnsmasq` in Docker for filtering, ruleset see [blacklist.conf](nameserver/conf/blacklist.conf)
  * Other Services
     * [staticweb](website) is our current [website](https://usableprivacy.net)
 ---

@@ -1,15 +1,37 @@
 version: '3'
+
 services:
-  doh:
-    build: doh
+  cryptodns:
+    build: cryptodns
     depends_on:
       - nameserver
+      - letsencrypt
     restart: "always"
     labels:
       - "traefik.frontend.entryPoints=https"
-      - "traefik.domain=usableprivacy.net"
-      - "traefik.frontend.rule=Host:adfree.usableprivacy.net"
-      - "traefik.application.port=8053"
+      - "traefik.frontend.rule=Host:${FQDN}"
+      - "traefik.application.port=4453"
+    volumes:
+      - ./cryptodns/conf:/etc/dnsdist:ro
+      - updns-certs-live:/certs/live:ro
+      - updns-certs-archive:/certs/archive:ro
+  letsencrypt:
+    build: letsencrypt
+    volumes:
+      - ./letsencrypt/dns_credentials:/etc/letsencrypt/dns_credentials:ro
+      - updns-certs-live:/etc/letsencrypt/live
+      - updns-certs-archive:/etc/letsencrypt/archive
+    environment:
+      - DNS_PROVIDER=${DNS_PROVIDER}
+      - LETS_ENCRYPT_MAIL=${LETS_ENCRYPT_MAIL}
+      - LETS_ENCRYPT_DOMAIN=${LETS_ENCRYPT_DOMAINS}
+    restart: "always"
   nameserver:
     build: nameserver
     restart: "always"
+    volumes:
+      - ./nameserver/conf:/etc/dnsmasq.d
+
+volumes:
+  updns-certs-live:
+  updns-certs-archive:
