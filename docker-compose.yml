@@ -8,9 +8,19 @@ services:
       - letsencrypt
     restart: "always"
     labels:
-      - "traefik.frontend.entryPoints=https"
-      - "traefik.frontend.rule=Host:${FQDN}"
-      - "traefik.application.port=4453"
+      - "traefik.enable=true"
+      - "traefik.http.routers.doh.entrypoints=https"
+      - "traefik.http.routers.doh.rule=Host(`${FQDN}`)"
+      - "traefik.http.routers.doh.tls=true"
+      - "traefik.http.routers.doh.tls.certresolver=default"
+      - "traefik.http.services.doh.loadbalancer.server.port=4453"
+      - "traefik.http.routers.doh.service=doh"
+      - "traefik.tcp.routers.dot.entrypoints=dot"
+      - "traefik.tcp.routers.dot.rule=HostSNI(`${FQDN}`)"
+      - "traefik.tcp.services.dot.loadbalancer.server.port=8053"
+      - "traefik.tcp.routers.dot.service=dot"
+      - "traefik.tcp.routers.dot.tls=true"
+      - "traefik.tcp.routers.dot.tls.passthrough=true"
     volumes:
       - ./cryptodns/conf:/etc/dnsdist:ro
       - updns-certs-live:/certs/live:ro
