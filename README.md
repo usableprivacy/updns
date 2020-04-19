@@ -1,40 +1,32 @@
-# [Public adfree DNS over HTTPS (DoH) resolver](https://usableprivacy.net)
+# [Usable Privacy DNS (updns)](https://docs.usableprivacy.com/updns)
 
-We run a public strictly non-logging DNS over HTTPS (DoH) server with 
-advertising and tracker filtering. This repo provides both instructions for 
-mobile clients and the general setup files.
+Privacy-protecting DNS resolver with advertising and tracker blocking.
 
-[01_config]:  doc/01_intra_server_config.png
-[02_works]:   doc/02_intra_working.png
-[03_queries]: doc/03_recent_queries.png
-[04_blocked]: doc/04_blocked_query.png
-[05_exclude]: doc/05_exclude_apps.png
+# Deploy a custom updns setup
+This repository provides the source code to our public filtering encrypted DNS setup.
+Requirements: [docker](https://github.com/docker/docker-ce) and [docker-compose](https://github.com/docker/compose).
+## Setup
+1) Fetch the latest **updns** source code from Github
+    ```
+    git clone https://github.com/usableprivacy/updns.git
+    ```
+2) Copy `.env_example` to `.env` and adapt it for your needs:
+    * `LETSENCRYPT_*` environment variables for certbot
+    * `FQDN` domain to use for your DoH / DoT server
+3) Create a `.ini` file with our DNS API credentials for `certbot`
+4) Run **updns**
+   ```
+   docker-compose up
+   ```
 
-## Android Setup with Jigsaw Intra App
-### 1. Install [Intra App](https://play.google.com/store/apps/details?id=app.intra)
-### 2. Set DoH Server to https://adfree.usableprivacy.net/
-![intra config][01_config]
-![intra_working][02_works]
-### Analyse Queries
-Advertising and tracking services receive `NX` responses.
-
-![intra show queries][03_queries]
-![intra blocked queries][04_blocked]
-### General recommendations
-Our adfree DoH server works best with mobile apps. DNS-based blocking is
-very coarse-grained. We therefore recommend you use decent browsers with 
-blocking extensions and use our Apps primarily to **counter mobile app tracking**.
-You can exclude e.g. your mobile browser from Intra.
-
-![intra exclude apps][05_exclude]
-
-## Host your own usable privacy DNS (updns) setup
-* [docker-compose.yml](docker-compose.yml) spawns your own custom blocking DoH server.
-   * The Docker compose setup is prepared for deployment with `traefik` (edge routing + TLS)
+## Basic updns building blocks
+* [docker-compose.yml](docker-compose.yml) spawns ad-blocking DoH + DoT servers.
+   * The Docker compose setup is prepared for deployment with `traefik2` (edge routing + TLS)
 * Basic **updns** Services
-   * [doh](cryptodns) deploys `dnsdist` in Docker to provide DoH over `HTTP`
+   * [doh](cryptodns) deploys `dnsdist` in Docker with DoH and DoT endpoints.
+   * [letsencrypt](letsencrypt) deploys certbot to get valid TLS certificates.
    * [nameserver](nameserver) deploys `dnsmasq` in Docker for filtering, ruleset see [blacklist.conf](nameserver/conf/blacklist.conf)
  * Other Services
     * [staticweb](website) is our current [website](https://usableprivacy.net)
 ---
-[Markus Donko-Huber (2019)](https://nysos.net)
+[Nysos Tech e.U.](https://nysos.net), Markus Donko-Huber 2020
