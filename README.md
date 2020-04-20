@@ -1,14 +1,16 @@
-#[Usable Privacy DNS (updns)](https://docs.usableprivacy.com/updns)
+# [Usable Privacy DNS (updns)](https://docs.usableprivacy.com/updns)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/usableprivacy/updns)
 ![GitHub](https://img.shields.io/github/license/usableprivacy/updns)
 
-Privacy-protecting DNS resolver with advertising and tracker blocking.
+**updns** is a privacy-protecting DNS resolver with advertising and tracker blocking.
 This code powers **[adfree.usableprivacy.net](https://docs.usableprivacy.com/updns)** a public, adblocking 
 and non-logging DoH/DoT service.
 
 # Deploy a custom updns setup
 This repository provides the source code to our public filtering encrypted DNS setup.
-Requirements: [docker](https://github.com/docker/docker-ce) and [docker-compose](https://github.com/docker/compose).
+Basic requirements:
+* [docker](https://github.com/docker/docker-ce)
+* [docker-compose](https://github.com/docker/compose)
 ## Setup
 1) Fetch the latest **updns** source code from Github
     ```
