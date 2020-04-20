@@ -1,6 +1,10 @@
-# [Usable Privacy DNS (updns)](https://docs.usableprivacy.com/updns)
+#[Usable Privacy DNS (updns)](https://docs.usableprivacy.com/updns)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/usableprivacy/updns)
+![GitHub](https://img.shields.io/github/license/usableprivacy/updns)
 
 Privacy-protecting DNS resolver with advertising and tracker blocking.
+This code powers **[adfree.usableprivacy.net](https://docs.usableprivacy.com/updns)** a public, adblocking 
+and non-logging DoH/DoT service.
 
 # Deploy a custom updns setup
 This repository provides the source code to our public filtering encrypted DNS setup.
@@ -21,12 +25,12 @@ Requirements: [docker](https://github.com/docker/docker-ce) and [docker-compose]
 
 ## Basic updns building blocks
 * [docker-compose.yml](docker-compose.yml) spawns ad-blocking DoH + DoT servers.
-   * The Docker compose setup is prepared for deployment with `traefik2` (edge routing + TLS)
+   * The Docker compose setup is ready for deployment with `traefik2` (edge routing + TLS)
 * Basic **updns** Services
-   * [doh](cryptodns) deploys `dnsdist` in Docker with DoH and DoT endpoints.
-   * [letsencrypt](letsencrypt) deploys certbot to get valid TLS certificates.
-   * [nameserver](nameserver) deploys `dnsmasq` in Docker for filtering, ruleset see [blacklist.conf](nameserver/conf/blacklist.conf)
- * Other Services
-    * [staticweb](website) is our current [website](https://usableprivacy.net)
+   * [cryptodns](cryptodns) deploys `dnsdist` in Docker with DoH and DoT endpoints.
+   * [letsencrypt](letsencrypt) deploys `certbot` to get valid TLS certificates.
+   * [nameserver](nameserver) deploys `dnsmasq` in Docker for filtering, see [blacklist.conf](nameserver/conf/blacklist.conf)
+ * Other Service(s)
+    * [staticweb](staticweb) simple static website
 ---
 [Nysos Tech e.U.](https://nysos.net), Markus Donko-Huber 2020
