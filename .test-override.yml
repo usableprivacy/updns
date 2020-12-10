@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  cryptodns:
+    ports:
+      - 127.0.0.1:4453:4453
+      - 127.0.0.1:853:853
+  letsencrypt:
+    environment:
+      - LETS_ENCRYPT_CUSTOM_FLAGS=--test-cert
+      #- LETS_ENCRYPT_CUSTOM_FLAGS=--test-cert --dry-run
+  test:
+    build:
+      context: ./cryptodns
+      dockerfile: Dockerfile.test
+    depends_on:
+      - cryptodns
+    environment:
+      - LETS_ENCRYPT_DOMAIN=${LETS_ENCRYPT_DOMAINS}
+    volumes:
+      - ./cryptodns/bin:/usr/local/bin
+
+volumes:
+  updns-certs-live:
+  updns-certs-archive:

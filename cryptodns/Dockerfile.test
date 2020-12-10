@@ -1,0 +1,8 @@
+FROM debian:buster-slim
+RUN apt-get update && apt-get install curl jq -y
+RUN curl https://letsencrypt.org/certs/fakelerootx1.pem -o /usr/local/share/ca-certificates/fakelerootx1.crt
+RUN update-ca-certificates
+RUN curl -L https://github.com/ameshkov/dnslookup/releases/download/v1.4.4/dnslookup-linux-amd64-v1.4.4.tar.gz > /tmp/dnslookup.tar.gz
+RUN cd /tmp && tar -xzvf dnslookup.tar.gz && mv /tmp/linux-amd64/dnslookup /usr/bin
+RUN chmod +x /usr/bin/dnslookup
+ENTRYPOINT /usr/local/bin/test.sh
