@@ -32,7 +32,5 @@ Basic requirements:
    * [cryptodns](cryptodns) deploys `dnsdist` in Docker with DoH and DoT endpoints.
    * [letsencrypt](letsencrypt) deploys `certbot` to get valid TLS certificates.
    * [nameserver](nameserver) deploys `dnsmasq` in Docker for filtering, see [blacklist.conf](nameserver/conf/blacklist.conf)
- * Other Service(s)
-    * [staticweb](staticweb) simple static website
 ---
 [Nysos Tech e.U.](https://nysos.net), Markus Donko-Huber 2020

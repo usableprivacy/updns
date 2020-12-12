@@ -1,4 +1,4 @@
-FROM debian:sid-slim
+FROM debian:buster-slim
 RUN apt-get update && apt-get install dnsmasq supervisor inotify-tools -y
 COPY bin/*.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/*.sh
