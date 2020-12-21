@@ -1,8 +1,12 @@
 name: ci
 
-#on:
-#  push:
-#    branches: v3.0-ci
+on:
+  push:
+    branches:
+      - v3.0-ci
+  pull_request:
+    branches:
+      - main
 
 jobs:
   multi:
