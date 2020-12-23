@@ -11,8 +11,11 @@ name: ci
 on: [push]
 
 jobs:
-  multi:
+  cryptodns:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: cryptodns
     steps:
       -
         name: Checkout
@@ -34,9 +37,7 @@ jobs:
         name: Build
         uses: docker/build-push-action@v2
         with:
-          context: ./cryptodns
-          #file: ./Dockerfile
-          platforms: linux/amd64, linux/arm32
+          platforms: linux/amd64, linux/arm
           push: true
           tags: |
             usableprivacy/cryptodns:latest
