@@ -20,7 +20,7 @@ Basic requirements:
     * `LETSENCRYPT_*` environment variables for certbot
     * `FQDN` domain to use for your DoH / DoT server
 3) Create a `.ini` file with our DNS API credentials for `certbot`
-4) Run **updns**
+4) Deploy **updns** services
    ```
    docker-compose up
    ```
