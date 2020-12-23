@@ -1,9 +1,12 @@
-name: updns
+name: ci
 
 on:
   pull_request:
     branches:
-      - main
+      - master
+  push:
+    branches:
+      - master
 
 #on: [push]
 
