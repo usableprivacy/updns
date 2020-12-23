@@ -34,7 +34,7 @@ jobs:
         name: Build
         uses: docker/build-push-action@v2
         with:
-          context: ./dockerfile
+          context: ./cryptodns
           Dockerfile: ./cyptodns/Dockerfile
           platforms: linux/amd64, linux/arm
           push: true
