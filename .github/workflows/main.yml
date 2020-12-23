@@ -28,7 +28,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: usableprivacy
           password: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
       -
         name: Build cryptodns
@@ -39,4 +39,4 @@ jobs:
           platforms: linux/amd64, linux/arm
           push: true
           tags: |
-            ghcr.io/usableprivacy/updns/cryptodns:latest
+            ghcr.io/usableprivacy/cryptodns:latest
