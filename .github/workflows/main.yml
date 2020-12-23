@@ -40,3 +40,23 @@ jobs:
           push: true
           tags: |
             ghcr.io/usableprivacy/cryptodns:latest
+      -
+        name: Build letsencrypt
+        uses: docker/build-push-action@v2
+        with:
+          context: ./letsencrypt
+          file: ./letsencrypt/Dockerfile
+          platforms: linux/amd64, linux/arm
+          push: true
+          tags: |
+            ghcr.io/usableprivacy/letsencrypt:latest
+      _
+        name: Build nameserver
+        uses: docker/build-push-action@v2
+        with:
+          context: ./nameserver
+          file: ./nameserver/Dockerfile
+          platforms: linux/amd64, linux/arm
+          push: true
+          tags: |
+            ghcr.io/usableprivacy/nameserver:latest
