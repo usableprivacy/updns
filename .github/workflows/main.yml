@@ -39,4 +39,4 @@ jobs:
           platforms: linux/amd64, linux/arm
           push: true
           tags: |
-            usableprivacy/cryptodns:latest
+            ghcr.io/usableprivacy/cryptodns:latest
