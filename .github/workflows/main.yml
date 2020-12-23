@@ -17,8 +17,6 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
-        with:
-          path: cryptodns
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -36,6 +34,7 @@ jobs:
         name: Build
         uses: docker/build-push-action@v2
         with:
+          Dockerfile: ./cyptodns/Dockerfile
           platforms: linux/amd64, linux/arm
           push: true
           tags: |
