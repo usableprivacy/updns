@@ -1,0 +1,21 @@
+# Basic set up for three docker services
+version: 2
+updates:
+
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "docker"
+    directory: "/cryptodns"
+    schedule:
+      interval: "daily"
+
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "docker"
+    directory: "/letsencrypt"
+    schedule:
+      interval: "daily"
+      
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "docker"
+    directory: "/nameserver"
+    schedule:
+      interval: "daily"
