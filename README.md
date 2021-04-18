@@ -34,4 +34,4 @@ Basic requirements:
    * [letsencrypt](letsencrypt) deploys `certbot` to get valid TLS certificates.
    * [nameserver](nameserver) deploys `dnsmasq` in Docker for filtering, see [blacklist.conf](nameserver/conf/blacklist.conf)
 ---
-[Nysos Tech e.U.](https://nysos.net), Markus Donko-Huber 2020
+[Nysos Tech e.U.](https://nysos.net), Markus Donko-Huber 2021
