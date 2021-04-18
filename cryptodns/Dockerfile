@@ -4,4 +4,4 @@ COPY bin/*.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/*.sh
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 EXPOSE 8053
-ENTRYPOINT ["/usr/bin/supervisord", "-n"]
+ENTRYPOINT ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf", "-u", "root"]
