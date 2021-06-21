@@ -6,7 +6,8 @@ description: >-
 
 # Setup adfree DoH Service
 
-## 
+{% page-ref page="updns-android-setup.md" %}
+{% page-ref page="updns-ios-setup.md" %}
 
 
 
