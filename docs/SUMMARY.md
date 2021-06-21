@@ -11,7 +11,7 @@
 
 ## incidents
 
-* [2020-09-21 DoS from Turkmenistan](incidents/2020-09-21-dos-attack-from-turkmenistan.md)
+* [2020-09-21 DoS from Turkmenistan](../incidents/2020-09-21-dos-attack-from-turkmenistan.md)
 
 ---
 
