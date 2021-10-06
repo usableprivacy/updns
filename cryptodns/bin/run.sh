@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [[ -z "${POD_NAME}" ]]; then
   service_host=${POD_NAME}_NAMESERVER_SERVICE_HOST
