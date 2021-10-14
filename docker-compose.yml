@@ -3,6 +3,7 @@ version: '3'
 services:
   cryptodns:
     build: cryptodns
+    user: ${PUID}:${GUID}
     depends_on:
       - nameserver
       - letsencrypt
@@ -23,14 +24,16 @@ services:
       - "traefik.tcp.routers.dot.tls.passthrough=true"
     volumes:
       - ./cryptodns/conf:/etc/dnsdist:ro
-      - updns-certs-live:/certs/live:ro
-      - updns-certs-archive:/certs/archive:ro
+      - ./.le/etc/live:/certs/live:ro
+      - ./.le/etc/archive:/certs/archive:ro
   letsencrypt:
     build: letsencrypt
+    user: ${PUID}:${GUID}
     volumes:
       - ./letsencrypt/dns_credentials:/etc/letsencrypt/dns_credentials:ro
-      - updns-certs-live:/etc/letsencrypt/live
-      - updns-certs-archive:/etc/letsencrypt/archive
+      - ./.le/etc:/etc/letsencrypt
+      - ./.le/lib:/var/lib/letsencrypt
+      - ./.le/logs:/var/log/letsencrypt
     environment:
       - DNS_PROVIDER=${DNS_PROVIDER}
       - LETS_ENCRYPT_MAIL=${LETS_ENCRYPT_MAIL}
@@ -41,7 +44,3 @@ services:
     restart: "always"
     volumes:
       - ./nameserver/conf:/etc/dnsmasq.d
-
-volumes:
-  updns-certs-live:
-  updns-certs-archive:

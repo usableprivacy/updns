@@ -1,7 +1,8 @@
 FROM debian:11-slim
-RUN apt-get update && apt-get install dnsdist supervisor inotify-tools -y
-COPY bin/*.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/*.sh
-COPY supervisord.conf /etc/supervisor/supervisord.conf
+RUN apt-get update && apt-get install dnsdist -y
+RUN adduser --system --group --no-create-home --uid 1033 updns
+COPY bin/run.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/run.sh
+USER updns
 EXPOSE 8053
-ENTRYPOINT ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf", "-u", "root"]
+ENTRYPOINT ["/usr/local/bin/run.sh"]

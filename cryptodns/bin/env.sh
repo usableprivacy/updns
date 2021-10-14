@@ -8,4 +8,4 @@ else
   dns_ips=$(getent hosts nameserver | awk 'BEGIN{ORS=":5300 ";}{print $1}')
 fi
 
-dnsdist --supervised --uid 1000 $dns_ips
+echo -n $dns_ips
