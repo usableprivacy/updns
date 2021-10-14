@@ -9,7 +9,7 @@ else
 fi
 
 if [[ -v DEBUG ]]; then
-  dnsdist -v --supervised --uid 1000 $dns_ips
+  dnsdist -v --supervised --uid 1033 $dns_ips
 else
-  dnsdist --supervised --uid 1000 $dns_ips
+  dnsdist --supervised --uid 1033 $dns_ips
 fi
