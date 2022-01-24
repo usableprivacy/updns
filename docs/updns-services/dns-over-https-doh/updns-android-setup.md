@@ -13,23 +13,23 @@ description: >-
 
 ### 2. Change the Intra DoH Server to [https://adfree.usableprivacy.net/query](https://adfree.usableprivacy.net/query-dns)
 
-![Change Intra default DoH server to adfree updns DoH server](../../.gitbook/assets/01_intra_server_config.png)
+![Change Intra default DoH server to adfree updns DoH server](../../.gitbook/assets/01\_intra\_server\_config.png)
 
-### 3. Verify Jigsaw Intra is working with the updns DoH service
+### 3. Verify Intra is working with the updns DoH service
 
-![](../../.gitbook/assets/02_intra_working.png)
+![](../../.gitbook/assets/02\_intra\_working.png)
 
 ## Recommended Additional Intra Settings
 
 ### **Verify advertising and tracker domains are filtered**
 
-The updns service responds with `NXDOMAIN` for filtered domains.
+The updns service responds with `0.0.0.0` for filtered domains.
 
-![Show recent queries in Intra Android app.](../../.gitbook/assets/03_recent_queries.png)
+![Show recent queries in Intra Android app.](../../.gitbook/assets/03\_recent\_queries.png)
 
 In the following screenshot you see that Snapchat App Analytics is blocked by the updns DoH server.
 
-![](../../.gitbook/assets/04_blocked_query.png)
+![](../../.gitbook/assets/04\_blocked\_query.png)
 
 ### Recommended whitelist settings for Intra on Android
 
@@ -37,7 +37,5 @@ Our adfree DoH server works best against tracking by mobile apps. DNS-based bloc
 
 
 
-![Exclude mobile browsers from Intra and rely on browser tracker blocking.](../../.gitbook/assets/05_exclude_apps.png)
-
-
+![Exclude mobile browsers from Intra and rely on browser tracker blocking.](../../.gitbook/assets/05\_exclude\_apps.png)
 
