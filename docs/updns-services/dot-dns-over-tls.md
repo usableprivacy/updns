@@ -6,9 +6,7 @@ description: >-
 
 # updns DoT Service Information
 
-| TLS host | IP | Port |
-| :--- | :--- | :--- |
-| adfree.usableprivacy.net | 149.154.153.153 | 853 |
-
-
+| TLS host                 | IP            | Port |
+| ------------------------ | ------------- | ---- |
+| adfree.usableprivacy.net | 78.47.163.141 | 853  |
 
