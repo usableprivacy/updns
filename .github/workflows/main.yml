@@ -60,3 +60,13 @@ jobs:
           push: true
           tags: |
             ghcr.io/usableprivacy/dns/nameserver:k8s
+      -
+        name: Build recursor
+        uses: docker/build-push-action@v2
+        with:
+          context: ./recursor
+          file: ./recursor/Dockerfile
+          platforms: linux/amd64, linux/arm
+          push: true
+          tags: |
+            ghcr.io/usableprivacy/dns/recursor:k8s
