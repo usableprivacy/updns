@@ -15,5 +15,6 @@
 
 ***
 
-* [Usable Privacy Tools](https://usableprivacy.com)
 * [GitHub: Usable Privacy DNS](https://github.com/usableprivacy/updns)
+* [Usable Privacy Tools](https://usableprivacy.com)
+* [Ninja Link](https://nili.cc)
