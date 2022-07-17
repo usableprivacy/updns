@@ -32,6 +32,6 @@ Basic requirements:
 * Basic **updns** Services
     * [cryptodns](cryptodns) deploys `dnsdist` in Docker with DoH and DoT endpoints.
     * [letsencrypt](letsencrypt) deploys `certbot` to get valid TLS certificates.
-    * [nameserver](nameserver) deploys `dnsmasq` in Docker for filtering, see [blacklist.conf](nameserver/conf/blacklist.conf)
+    * [recursor](recursor) deploys `pdns-recursor` in Docker for filtering, see [filterlist.lua](recursor/conf/filterlist.lua)
 ---
-[Nysos Tech e.U.](https://nysos.net), Markus Donko-Huber 2021
+[Nysos Tech e.U.](https://nysos.net), Markus Donko-Huber 2022

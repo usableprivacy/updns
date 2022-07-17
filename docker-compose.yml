@@ -5,27 +5,18 @@ services:
     build: cryptodns
     user: ${PUID}:${GUID}
     depends_on:
-      - nameserver
+      - recursor
       - letsencrypt
     restart: "always"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.doh.entrypoints=https"
-      - "traefik.http.routers.doh.rule=Host(`${FQDN}`)"
-      - "traefik.http.routers.doh.tls=true"
-      - "traefik.http.routers.doh.tls.certresolver=default"
-      - "traefik.http.services.doh.loadbalancer.server.port=8053"
-      - "traefik.http.routers.doh.service=doh"
-      - "traefik.tcp.routers.dot.entrypoints=dot"
-      - "traefik.tcp.routers.dot.rule=HostSNI(`${FQDN}`)"
-      - "traefik.tcp.services.dot.loadbalancer.server.port=853"
-      - "traefik.tcp.routers.dot.service=dot"
-      - "traefik.tcp.routers.dot.tls=true"
-      - "traefik.tcp.routers.dot.tls.passthrough=true"
     volumes:
       - ./cryptodns/conf:/etc/dnsdist:ro
       - ./.le/etc/live:/certs/live:ro
       - ./.le/etc/archive:/certs/archive:ro
+  recursor:
+    build: recursor
+    restart: "always"
+    volumes:
+      - ./recursor/conf/filterlist.lua:/etc/powerdns/recursor.d/filterlist.lua:ro
   letsencrypt:
     build: letsencrypt
     user: ${PUID}:${GUID}
@@ -39,8 +30,3 @@ services:
       - LETS_ENCRYPT_MAIL=${LETS_ENCRYPT_MAIL}
       - LETS_ENCRYPT_DOMAIN=${LETS_ENCRYPT_DOMAINS}
     restart: "always"
-  nameserver:
-    build: nameserver
-    restart: "always"
-    volumes:
-      - ./nameserver/conf:/etc/dnsmasq.d
