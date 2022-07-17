@@ -51,16 +51,6 @@ jobs:
           tags: |
             ghcr.io/usableprivacy/dns/letsencrypt:k8s
       -
-        name: Build nameserver
-        uses: docker/build-push-action@v2
-        with:
-          context: ./nameserver
-          file: ./nameserver/Dockerfile
-          platforms: linux/amd64, linux/arm
-          push: true
-          tags: |
-            ghcr.io/usableprivacy/dns/nameserver:k8s
-      -
         name: Build recursor
         uses: docker/build-push-action@v2
         with:
