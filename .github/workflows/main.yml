@@ -3,10 +3,10 @@ name: ci
 on:
   pull_request:
     branches:
-      - k8s
+      - master
   push:
     branches:
-      - k8s
+      - master
 
 #on: [push]
 
