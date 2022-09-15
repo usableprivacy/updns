@@ -4,7 +4,7 @@
 ![GitHub](https://img.shields.io/github/license/usableprivacy/updns)
 
 **updns** is a privacy-protecting DNS resolver with advertising and tracker blocking.
-This code powers **[adfree.usableprivacy.net](https://docs.usableprivacy.com/updns)** a public, adblocking
+This repo powers **[adfree.usableprivacy.net](https://docs.usableprivacy.com/updns)** a public, adblocking
 and non-logging DoH/DoT service.
 
 # Deploy a custom updns setup
@@ -27,11 +27,10 @@ Basic requirements:
    ```
 
 ## Basic updns building blocks
-* [docker-compose.yml](docker-compose.yml) spawns ad-blocking DoH + DoT servers.
-    * The Docker compose setup is ready for deployment with `traefik2` (edge routing + TLS)
+* [docker-compose.yml](docker-compose.yml) deploys ad-blocking DoH + DoT servers.
 * Basic **updns** Services
     * [cryptodns](cryptodns) deploys `dnsdist` in Docker with DoH and DoT endpoints.
     * [letsencrypt](letsencrypt) deploys `certbot` to get valid TLS certificates.
-    * [nameserver](nameserver) deploys `dnsmasq` in Docker for filtering, see [blacklist.conf](nameserver/conf/blacklist.conf)
+    * [recursor](recursor) deploys `pdns-recursor` in Docker for filtering, see [filterlist.lua](recursor/conf/filterlist.lua)
 ---
-[Nysos Tech e.U.](https://nysos.net), Markus Donko-Huber 2021
+[Nysos Tech e.U.](https://nysos.net), Markus Donko-Huber 2022

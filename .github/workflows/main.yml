@@ -3,10 +3,10 @@ name: ci
 on:
   pull_request:
     branches:
-      - master
+      - k8s
   push:
     branches:
-      - master
+      - k8s
 
 #on: [push]
 
@@ -39,7 +39,7 @@ jobs:
           platforms: linux/amd64, linux/arm
           push: true
           tags: |
-            ghcr.io/usableprivacy/dns/cryptodns:latest
+            ghcr.io/usableprivacy/dns/cryptodns:k8s
       -
         name: Build letsencrypt
         uses: docker/build-push-action@v2
@@ -49,14 +49,14 @@ jobs:
           platforms: linux/amd64, linux/arm
           push: true
           tags: |
-            ghcr.io/usableprivacy/dns/letsencrypt:latest
+            ghcr.io/usableprivacy/dns/letsencrypt:k8s
       -
-        name: Build nameserver
+        name: Build recursor
         uses: docker/build-push-action@v2
         with:
-          context: ./nameserver
-          file: ./nameserver/Dockerfile
+          context: ./recursor
+          file: ./recursor/Dockerfile
           platforms: linux/amd64, linux/arm
           push: true
           tags: |
-            ghcr.io/usableprivacy/dns/nameserver:latest
+            ghcr.io/usableprivacy/dns/recursor:k8s
