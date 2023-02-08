@@ -33,4 +33,4 @@ Basic requirements:
     * [letsencrypt](letsencrypt) deploys `certbot` to get valid TLS certificates.
     * [recursor](recursor) deploys `pdns-recursor` in Docker for filtering, see [filterlist.lua](recursor/conf/filterlist.lua)
 ---
-[Nysos Tech e.U.](https://nysos.net), Markus Donko-Huber 2022
+[Nysos Tech e.U.](https://nysos.net), Markus Donko-Huber 2023
