@@ -1,6 +1,6 @@
 # [Usable Privacy DNS (updns)](https://docs.usableprivacy.com/updns)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/usableprivacy/updns)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/usableprivacy/updns/ci)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/usableprivacy/updns/main.yml?branch=master)
 ![GitHub](https://img.shields.io/github/license/usableprivacy/updns)
 
 **updns** is a privacy-protecting DNS resolver with advertising and tracker blocking.
