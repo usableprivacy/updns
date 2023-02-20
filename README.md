@@ -1,10 +1,10 @@
-# [Usable Privacy DNS (updns)](https://docs.usableprivacy.com/updns)
+# [Usable Privacy DNS (updns)](https://docs.usableprivacy.com/dns)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/usableprivacy/updns)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/usableprivacy/updns/main.yml?branch=master)
 ![GitHub](https://img.shields.io/github/license/usableprivacy/updns)
 
 **updns** is a privacy-protecting DNS resolver with advertising and tracker blocking.
-This repo powers **[adfree.usableprivacy.net](https://docs.usableprivacy.com/updns)** a public, adblocking
+This repo powers **[adfree.usableprivacy.net](https://docs.usableprivacy.com/dns)** a public, adblocking
 and non-logging DoH/DoT service.
 
 # Deploy a custom updns setup
