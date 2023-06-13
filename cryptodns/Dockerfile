@@ -1,4 +1,4 @@
-FROM debian:11-slim
+FROM debian:12-slim
 
 RUN apt-get update && apt-get install curl gnupg -y
 RUN curl https://repo.powerdns.com/FD380FBB-pub.asc | apt-key add -
