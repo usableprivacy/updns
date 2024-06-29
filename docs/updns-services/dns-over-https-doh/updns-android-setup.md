@@ -13,7 +13,11 @@ description: >-
 
 ### 2. Change the Intra DoH Server to [https://adfree.usableprivacy.net/query](https://adfree.usableprivacy.net/query-dns)
 
-![Change Intra default DoH server to adfree updns DoH server](../../.gitbook/assets/01\_intra\_server\_config.png)
+<div align="center">
+
+<img src="../../.gitbook/assets/01_intra_server_config.png" alt="Change Intra default DoH server to adfree updns DoH server">
+
+</div>
 
 ### 3. Verify Intra is working with the updns DoH service
 

@@ -12,6 +12,7 @@
 ## incidents
 
 * [2020-09-21 DoS from Turkmenistan](incidents/2020-09-21-dos-from-turkmenistan.md)
+* [2024-06-27 Entire Infrastructure Outage](incidents/2024-06-27-entire-infrastructure-outage.md)
 
 ***
 

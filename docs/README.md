@@ -25,7 +25,7 @@ We run a public privacy-protecting DNS server with advertising, tracker, and mal
 
 ## Open Source
 
-The **** [**updns**](https://github.com/usableprivacy/updns) software stack is available under the **BSD 2-Clause License** on GitHub.
+The [**updns**](https://github.com/usableprivacy/updns) software stack is available under the **BSD 2-Clause License** on GitHub.
 
 ### [github.com/usableprivacy](https://github.com/usableprivacy/updns)
 
