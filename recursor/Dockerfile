@@ -1,7 +1,7 @@
 FROM debian:12-slim
 
 RUN apt-get update && apt-get install curl -y
-RUN curl https://repo.powerdns.com/FD380FBB-pub.asc | tee tee /etc/apt/keyrings/rec-51-pub.asc
+RUN curl https://repo.powerdns.com/FD380FBB-pub.asc | tee tee /etc/apt/keyrings/rec-4-pub.asc
 COPY conf/pdns.list /etc/apt/sources.list.d/pdns.list
 COPY conf/pdns.pin /etc/apt/preferences.d/pdns
 
