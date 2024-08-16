@@ -42,7 +42,7 @@ jobs:
             ghcr.io/usableprivacy/dns/cryptodns:latest
       -
         name: Build letsencrypt
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v6
         with:
           context: ./letsencrypt
           file: ./letsencrypt/Dockerfile
@@ -52,7 +52,7 @@ jobs:
             ghcr.io/usableprivacy/dns/letsencrypt:latest
       -
         name: Build recursor
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v6
         with:
           context: ./recursor
           file: ./recursor/Dockerfile
