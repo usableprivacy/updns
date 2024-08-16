@@ -13,9 +13,6 @@ on:
 jobs:
   build-updns-images:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
       -
         name: Checkout
