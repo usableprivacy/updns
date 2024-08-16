@@ -1,1 +1,1 @@
-deb [arch=amd64] http://repo.powerdns.com/debian bullseye-rec-47 main
+deb [signed-by=/etc/apt/keyrings/rec-51-pub.asc] http://repo.powerdns.com/debian bookworm-rec-51 main
