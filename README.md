@@ -13,7 +13,7 @@ Basic requirements:
 * [docker](https://github.com/docker/docker-ce)
 * [docker-compose](https://github.com/docker/compose)
 ## Setup
-1) Fetch the latest **updns** source code from Github
+1) Fetch the latest **updns** source code from GitHub
     ```
     git clone https://github.com/usableprivacy/updns.git
     ```
@@ -26,7 +26,7 @@ Basic requirements:
    docker-compose up
    ```
 
-## Basic updns building blocks
+## Basic `updns` building blocks
 * [docker-compose.yml](docker-compose.yml) deploys ad-blocking DoH + DoT servers.
 * Basic **updns** Services
     * [cryptodns](cryptodns) deploys `dnsdist` in Docker with DoH and DoT endpoints.

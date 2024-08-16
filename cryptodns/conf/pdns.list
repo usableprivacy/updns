@@ -1,1 +1,1 @@
-deb [arch=amd64] http://repo.powerdns.com/debian bookworm-dnsdist-18 main
+deb [signed-by=/etc/apt/keyrings/dnsdist-18-pub.asc] http://repo.powerdns.com/debian bookworm-dnsdist-18 main
