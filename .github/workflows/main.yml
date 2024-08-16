@@ -32,11 +32,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       -
         name: Build cryptodns
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           context: ./cryptodns
           file: ./cryptodns/Dockerfile
-          platforms: linux/amd64, linux/arm
+          platforms: linux/amd64
           push: true
           tags: |
             ghcr.io/usableprivacy/dns/cryptodns:latest
@@ -46,7 +46,7 @@ jobs:
         with:
           context: ./letsencrypt
           file: ./letsencrypt/Dockerfile
-          platforms: linux/amd64, linux/arm
+          platforms: linux/amd64
           push: true
           tags: |
             ghcr.io/usableprivacy/dns/letsencrypt:latest
@@ -56,7 +56,7 @@ jobs:
         with:
           context: ./recursor
           file: ./recursor/Dockerfile
-          platforms: linux/amd64, linux/arm
+          platforms: linux/amd64
           push: true
           tags: |
             ghcr.io/usableprivacy/dns/recursor:latest
