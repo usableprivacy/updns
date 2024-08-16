@@ -26,7 +26,7 @@ Basic requirements:
    docker-compose up
    ```
 
-## Basic updns building blocks
+## Basic `updns` building blocks
 * [docker-compose.yml](docker-compose.yml) deploys ad-blocking DoH + DoT servers.
 * Basic **updns** Services
     * [cryptodns](cryptodns) deploys `dnsdist` in Docker with DoH and DoT endpoints.
