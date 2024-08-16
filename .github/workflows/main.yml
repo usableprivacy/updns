@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      issues: write
+      packages: write
     steps:
       -
         name: Checkout
