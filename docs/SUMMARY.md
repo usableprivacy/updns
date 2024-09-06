@@ -11,11 +11,11 @@
 
 ## incidents
 
-* [2020-09-21 DoS from Turkmenistan](incidents/2020-09-21-dos-from-turkmenistan.md)
 * [2024-06-27 Entire Infrastructure Outage](incidents/2024-06-27-entire-infrastructure-outage.md)
+* [2020-09-21 DoS from Turkmenistan](incidents/2020-09-21-dos-from-turkmenistan.md)
 
 ***
 
 * [GitHub: Usable Privacy DNS](https://github.com/usableprivacy/updns)
+* [Ninja Link CC](https://nili.cc)
 * [Usable Privacy Tools](https://usableprivacy.com)
-* [Ninja Link](https://nili.cc)
