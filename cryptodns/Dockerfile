@@ -1,4 +1,4 @@
-FROM debian:12-slim
+FROM debian:13-slim
 
 RUN apt-get update && apt-get install curl -y
 RUN curl https://repo.powerdns.com/FD380FBB-pub.asc | tee /etc/apt/keyrings/dnsdist-18-pub.asc
