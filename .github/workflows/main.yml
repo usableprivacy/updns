@@ -30,6 +30,17 @@ jobs:
           registry: ghcr.io
           username: usableprivacy
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create cryptodns tags
+        id: meta-cryptodns
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/usableprivacy/dns/cryptodns
+          tags: |
+            type=raw,value=stable,enable=${{ github.ref == 'refs/heads/master' }}
+            type=ref,event=branch
+            type=raw,value=latest
+
       -
         name: Build cryptodns
         uses: docker/build-push-action@v6
@@ -38,18 +49,18 @@ jobs:
           file: ./cryptodns/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: |
-            ghcr.io/usableprivacy/dns/cryptodns:latest
-      -
-        name: Build letsencrypt
-        uses: docker/build-push-action@v6
+          tags: ${{ steps.meta-cryptodns.outputs.tags }}
+
+      - name: Create recursor tags
+        id: meta-recursor
+        uses: docker/metadata-action@v5
         with:
-          context: ./letsencrypt
-          file: ./letsencrypt/Dockerfile
-          platforms: linux/amd64
-          push: true
+          images: ghcr.io/usableprivacy/dns/recursor
           tags: |
-            ghcr.io/usableprivacy/dns/letsencrypt:latest
+            type=raw,value=stable,enable=${{ github.ref == 'refs/heads/master' }}
+            type=ref,event=branch
+            type=raw,value=latest
+
       -
         name: Build recursor
         uses: docker/build-push-action@v6
@@ -58,5 +69,4 @@ jobs:
           file: ./recursor/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: |
-            ghcr.io/usableprivacy/dns/recursor:latest
+          tags: ${{ steps.meta-recursor.outputs.tags }}
