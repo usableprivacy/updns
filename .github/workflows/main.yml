@@ -37,7 +37,7 @@ jobs:
           images: ghcr.io/usableprivacy/dns/cryptodns
           tags: |
             type=raw,value=stable,enable=${{ github.ref == 'refs/heads/master' }}
-            type=raw,value={{branch}},enable=${{ github.ref != 'refs/heads/master' }}
+            type=ref,event=branch,enable=${{ github.ref != 'refs/heads/master' }}
             type=raw,value=latest
 
       - name: Build cryptodns
@@ -56,7 +56,7 @@ jobs:
           images: ghcr.io/usableprivacy/dns/recursor
           tags: |
             type=raw,value=stable,enable=${{ github.ref == 'refs/heads/master' }}
-            type=raw,value={{branch}},enable=${{ github.ref != 'refs/heads/master' }}
+            type=ref,event=branch,enable=${{ github.ref != 'refs/heads/master' }}
             type=raw,value=latest
 
       - name: Build recursor
@@ -75,7 +75,7 @@ jobs:
           images: ghcr.io/usableprivacy/dns/letsencrypt
           tags: |
             type=raw,value=stable,enable=${{ github.ref == 'refs/heads/master' }}
-            type=raw,value={{branch}},enable=${{ github.ref != 'refs/heads/master' }}
+            type=ref,event=branch,enable=${{ github.ref != 'refs/heads/master' }}
             type=raw,value=latest
 
       - name: Build letsencrypt
