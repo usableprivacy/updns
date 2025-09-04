@@ -8,8 +8,6 @@ on:
     branches:
       - master
 
-#on: [push]
-
 jobs:
   build-updns-images:
     runs-on: ubuntu-latest
@@ -36,8 +34,10 @@ jobs:
         with:
           images: ghcr.io/usableprivacy/dns/cryptodns
           tags: |
+            type=ref,event=branch
+            type=ref,event=tag
+            type=ref,event=pr
             type=raw,value=stable,enable=${{ github.ref == 'refs/heads/master' }}
-            type=raw,value={{branch}},enable=${{ github.ref != 'refs/heads/master' }}
             type=raw,value=latest
 
       - name: Build cryptodns
@@ -55,8 +55,10 @@ jobs:
         with:
           images: ghcr.io/usableprivacy/dns/recursor
           tags: |
+            type=ref,event=branch
+            type=ref,event=tag
+            type=ref,event=pr
             type=raw,value=stable,enable=${{ github.ref == 'refs/heads/master' }}
-            type=raw,value={{branch}},enable=${{ github.ref != 'refs/heads/master' }}
             type=raw,value=latest
 
       - name: Build recursor
@@ -74,8 +76,10 @@ jobs:
         with:
           images: ghcr.io/usableprivacy/dns/letsencrypt
           tags: |
+            type=ref,event=branch
+            type=ref,event=tag
+            type=ref,event=pr
             type=raw,value=stable,enable=${{ github.ref == 'refs/heads/master' }}
-            type=raw,value={{branch}},enable=${{ github.ref != 'refs/heads/master' }}
             type=raw,value=latest
 
       - name: Build letsencrypt
