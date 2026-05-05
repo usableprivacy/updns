@@ -4,4 +4,4 @@ COPY certificates.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/certificates.sh
 RUN adduser --system --no-create-home --uid 1000 updns
 USER updns
-ENTRYPOINT /usr/local/bin/certificates.sh
+ENTRYPOINT ["/usr/local/bin/certificates.sh"]
