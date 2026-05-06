@@ -12,7 +12,6 @@ RUN mkdir /var/run/pdns-recursor
 RUN chown -R updns:updns /var/run/pdns-recursor
 COPY recursor.conf /etc/powerdns/recursor.conf
 COPY conf/filter.lua /etc/powerdns/recursor.d/filter.lua
-#COPY conf/filter.conf /etc/powerdns/recursor.d/filter.conf
 
 RUN apt-get autoremove -y && apt-get clean
 
